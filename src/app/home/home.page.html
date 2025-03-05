@@ -1,20 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      GeoLcation Example
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-pudding">
+  <ion-button (click)="getCurrentLocation()">Get Current Location</ion-button>
+  <ion-button (click)="watchLocation()">Watch Location</ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div *ngIf="location">
+    <a><strong>Latitude:</strong>{{ location.latitude }}</a>
+    <a><strong>Longitude:</strong>{{ location.longitude }}</a>
   </div>
 </ion-content>
